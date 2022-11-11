@@ -1,0 +1,47 @@
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/* display flex */
+.flex {
+    display: flex;
+}
+/* flex direction coloumn */
+.flex-column {
+    flex-direction: column;
+}
+
+/* justify content */
+.justify-between {
+    justify-content: space-between;
+}
+.justify-evenly {
+    justify-content: space-evenly;
+}
+.justify-center {
+    justify-content: center;
+}
+/* align items */
+.align-center {
+    align-items: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+/* position */
+.absolute {
+    position: absolute;
+}
+.relative {
+    position: relative;
+}
+/* styling input area */
+.input-area {
+    width: 92.7%;
+    padding: .6rem;
+}
+/* cursor pointer */
+.pointer {
+    cursor: pointer;
+}

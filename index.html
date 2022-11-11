@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/shared/icons8-push-cart-67.png" type="image/x-icon">
+    <title>CRUD Operation</title>
+
+    <link rel="stylesheet" href="./public/style/style.css">
+    <link rel="stylesheet" href="./public/style/utils.css">
+</head>
+<body>
+    <main class="main_body absolute">
+        <!-- The form -->
+        <form autocomplete="off" action="">
+            <!-- Input details container -->
+            <div class="input-container absolute">
+                <!-- Name input -->
+                <div class="input-details">
+                    <label class="name uppercase" for="name">Name</label>
+                    <br>
+                    <input class="input-area" type="text" name="name" id="name" placeholder="eg:Akira">
+                </div>
+
+                <!-- hobby input -->
+                <div class="input-details">
+                    <label class="hobby uppercase" for="hobby">Hobby</label>
+                    <br>
+                    <input class="input-area" type="text" name="hobby" id="hobby" placeholder="eg:Martial Arts">
+                </div>
+
+                <!-- about input -->
+                <div class="input-details">
+                    <label class="about uppercase" for="about">About</label>
+                    <br>
+                    <input class="input-area" type="text" name="About" id="about" placeholder="About yourself in 2 words">
+                </div>
+
+                <!-- career input -->
+                <div class="input-details">
+                    <label class="name uppercase" for="pursuit">Pursuit</label>
+                    <br>
+                    <input class="input-area" type="text" name="pursuit" id="pursuit" placeholder="eg:artist,freelance...">
+                </div>
+
+                <!-- the buttons to submit and reset the forms -->
+                <div class="btn-container form_action">
+                    <button id="submitBtn" class="btn submitBtn pointer">Submit</button>
+                    <button id="resetBtn" class="btn resetBtn pointer">Reset</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- the container where your submitted forms will be there -->
+        <div class="display-details relative">
+            <table class="content-table absolute">
+                <thead class="">
+                    <tr>
+                        <th class="">name</th>
+                        <th class="">hobby</th>
+                        <th class="">about</th>
+                        <th class="">Pursuit</th>
+                    </tr>
+                </thead>
+
+                <tbody class="">
+                    <tr>
+                        <td>Geremsa</td>
+                        <td>Games</td>
+                        <td>Pro</td>
+                        <td>Digital Work</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- a container to store the details inputed by the user -->
+            <!-- <div id="store" class="store flex flex-column"> -->
+                <!-- <div class="flex justify-evenly">
+                    <div>Geremsa</div>
+                    <div>games</div>
+                    <div>pro procrastinator</div>
+                    <div>every digital work</div>
+                </div>
+                <div class="flex after_btn justify-evenly">
+                    <button class="editBtn">edit</button>
+                    <button class="deleteBtn">delete</button>
+                </div> -->
+            <!-- </div> -->
+        </div>
+    </main>
+    <script src="./src/script.js"></script>
+</body>
+</html>

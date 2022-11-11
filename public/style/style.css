@@ -1,0 +1,126 @@
+body {
+    /* width: 100%; */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right bottom, #183259, #005375, #007378, #278f63, #89a44c);
+}
+/* main containee */
+.main_body {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    width: 1400px;
+    height: 680px;
+
+    background: linear-gradient(to top left, #ffa1d6, #f0a7e5, #dfaef0, #ccb4f7, #b9bafb, #a8c3ff, #99ccff, #8fd3ff, #87dfff, #85ebff, #8af5fe, #96fff8);
+    border-radius: 20px;
+}
+/* input container */
+.input-container {
+    width: 577px;
+    height: 637px;
+    left: 12px;
+    top: 21px;
+
+    background: #FFFFFF;
+    border-radius: 26px;
+}
+/* Display details */
+.display-details {
+    width: 790px;
+    height: 637px;
+    left: 600px;
+    top: 21px;
+
+    background: #FFFFFF;
+    border-radius: 26px;
+
+    overflow: hidden;
+}
+/* input name details */
+.input-details {
+    margin: 2rem;
+}
+.input-details>* {
+    margin: .5rem;
+}
+/* Button container */
+.btn-container {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+/* Button design */
+.btn {
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+}
+.btn:active {
+    box-shadow: #000045 0 12px 24px -10px;
+    transform: translateY(2px);
+}
+/* imput box design */
+input {
+    border: 2px solid #5E5DF0;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    outline: none;
+}
+input:focus {
+    border: 2px solid #13139c;
+}
+
+/* *****************display designs****************** */
+.content-table {
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.9em;
+    width: 95%;
+    left: 0;
+    right: 0;
+    margin: 20px auto;
+
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+    overflow: hidden;
+}
+/* table head */
+.content-table thead tr {
+    font-family: 'Sono', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+    background-color: #a0a0f1;
+    text-align: left;
+
+    margin-bottom: 1rem;
+}
+.content-table thead th {
+    padding: .8rem;
+}
+
+/* table body */
+.content-table tbody td {
+    /* border-bottom: 1px solid gray; */
+    background-color: #f3f3f3;
+    padding: .5rem;
+}
