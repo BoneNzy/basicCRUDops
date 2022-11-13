@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to right bottom, #183259, #005375, #007378, #278f63, #89a44c);
+    /* background-size: cover; */
 }
 /* main containee */
 .main_body {
@@ -89,6 +90,9 @@ input {
 input:focus {
     border: 2px solid #13139c;
 }
+#ID {
+    background-color: rgba(215, 210, 210, 0.921);
+}
 
 /* *****************display designs****************** */
 .content-table {
@@ -123,4 +127,14 @@ input:focus {
     /* border-bottom: 1px solid gray; */
     background-color: #f3f3f3;
     padding: .5rem;
+}
+
+/* Edit and delete button design */
+.edit {
+    width: 27px;
+    margin-inline: 6px;
+}
+.delete{
+    width: 30px;
+    margin-inline: 6px;
 }

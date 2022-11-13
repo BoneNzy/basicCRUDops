@@ -13,9 +13,16 @@
 <body>
     <main class="main_body absolute">
         <!-- The form -->
-        <form autocomplete="off" action="">
-            <!-- Input details container -->
-            <div class="input-container absolute">
+        <!-- Input details container -->
+        <div class="input-container absolute">
+            <form autocomplete="off">
+                <!-- ID input -->
+                <div class="input-details">
+                    <label class="ID uppercase" for="ID">ID</label>
+                    <br>
+                    <input class="input-area" type="number" name="ID" id="ID" disabled="disabled">
+                </div>
+
                 <!-- Name input -->
                 <div class="input-details">
                     <label class="name uppercase" for="name">Name</label>
@@ -36,59 +43,56 @@
                     <br>
                     <input class="input-area" type="text" name="About" id="about" placeholder="About yourself in 2 words">
                 </div>
-
-                <!-- career input -->
-                <div class="input-details">
-                    <label class="name uppercase" for="pursuit">Pursuit</label>
-                    <br>
-                    <input class="input-area" type="text" name="pursuit" id="pursuit" placeholder="eg:artist,freelance...">
-                </div>
-
-                <!-- the buttons to submit and reset the forms -->
-                <div class="btn-container form_action">
-                    <button id="submitBtn" class="btn submitBtn pointer">Submit</button>
-                    <button id="resetBtn" class="btn resetBtn pointer">Reset</button>
-                </div>
+            </form>
+            <!-- the buttons to submit and reset the forms -->
+            <div class="btn-container form_action">
+                <button id="createBtn" class="btn createBtn pointer">Create</button>
+                <button id="resetBtn" class="btn resetBtn pointer">Reset</button>
+                <button id="updateBtn" class="btn updateBtn pointer">Update</button>
+                <button id="deleteBtn" class="btn deleteBtn pointer">Delete</button>
             </div>
-        </form>
+        </div>
 
         <!-- the container where your submitted forms will be there -->
         <div class="display-details relative">
             <table class="content-table absolute">
                 <thead class="">
                     <tr>
+                        <th class="">ID</th>
                         <th class="">name</th>
                         <th class="">hobby</th>
                         <th class="">about</th>
-                        <th class="">Pursuit</th>
+                        <th class="">Actions</th>
                     </tr>
                 </thead>
 
                 <tbody class="">
                     <tr>
+                        <td>1</td>
                         <td>Geremsa</td>
                         <td>Games</td>
                         <td>Pro</td>
-                        <td>Digital Work</td>
+                        <td>
+                            <img class="edit pointer" src="./src/shared/edit-icon.png" alt="edit">
+                            <img class="delete pointer" src="./src/shared/delete-icon.png" alt="delete">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bone</td>
+                        <td>art</td>
+                        <td>Pro</td>
+                        <td>
+                            <img class="edit pointer" src="./src/shared/edit-icon.png" alt="edit">
+                            <img class="delete pointer" src="./src/shared/delete-icon.png" alt="delete">
+                        </td>
                     </tr>
                 </tbody>
             </table>
-
-            <!-- a container to store the details inputed by the user -->
-            <!-- <div id="store" class="store flex flex-column"> -->
-                <!-- <div class="flex justify-evenly">
-                    <div>Geremsa</div>
-                    <div>games</div>
-                    <div>pro procrastinator</div>
-                    <div>every digital work</div>
-                </div>
-                <div class="flex after_btn justify-evenly">
-                    <button class="editBtn">edit</button>
-                    <button class="deleteBtn">delete</button>
-                </div> -->
-            <!-- </div> -->
         </div>
     </main>
-    <script src="./src/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dexie/3.2.2/dexie.min.js" integrity="sha512-/Aa8vGWIh0EnOTIVN/ZWTS3UqyJJDhWYtIPS/IqtaaSG0VA6hC6CSvtWdh2+T72q74+2l1RFgu+ig91LGLX57A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./src/script.js" type="module"></script>
 </body>
 </html>
