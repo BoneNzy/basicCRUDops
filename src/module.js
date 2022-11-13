@@ -10,10 +10,10 @@ const userDb = (Dbname, table) => {
 }
 
 // insert the values to the datatbase
-const massCreate = (dbtable, data) => {
+const bulkCreate = (dbtable, data) => {
     let flag = empty(data);
     if (flag) {
-        dbtable.massAdd([data]);
+        dbtable.bulkAdd([data]);
         console.log('Data inserted successfully!');
     } else {
         console.log('Please provide data!');
@@ -26,7 +26,7 @@ const empty = object => {
     let flag = false;
 
     for (const value in object) {
-        if (object[value] != "" && Object.hasOwnProperty(value)) {
+        if (object[value] != "" && object.hasOwnProperty(value)) {
             flag = true;
         }else {
             flag = false;
@@ -37,4 +37,4 @@ const empty = object => {
 
 // export
 export default userDb;
-export {massCreate};
+export {bulkCreate};
