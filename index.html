@@ -12,15 +12,15 @@
 </head>
 <body>
     <main class="main_body absolute">
-        <!-- The form -->
         <!-- Input details container -->
         <div class="input-container absolute">
+            <!-- The form -->
             <form autocomplete="off">
                 <!-- ID input -->
                 <div class="input-details">
                     <label class="ID uppercase" for="ID">ID</label>
                     <br>
-                    <input class="input-area" type="number" name="ID" id="ID" disabled="disabled">
+                    <input class="input-area" type="number" name="ID" id="userId" disabled="disabled">
                 </div>
 
                 <!-- Name input -->
@@ -39,17 +39,17 @@
 
                 <!-- about input -->
                 <div class="input-details">
-                    <label class="about uppercase" for="about">About</label>
+                    <label class="about uppercase" for="about">Self Describe</label>
                     <br>
-                    <input class="input-area" type="text" name="About" id="about" placeholder="About yourself in 2 words">
+                    <input class="input-area" type="text" name="About" id="about" placeholder="About yourself in few words">
                 </div>
             </form>
             <!-- the buttons to submit and reset the forms -->
             <div class="btn-container form_action">
                 <button id="createBtn" class="btn createBtn pointer">Create</button>
-                <button id="resetBtn" class="btn resetBtn pointer">Reset</button>
+                <button id="readBtn" class="btn readBtn pointer">Read</button>
                 <button id="updateBtn" class="btn updateBtn pointer">Update</button>
-                <button id="deleteBtn" class="btn deleteBtn pointer">Delete</button>
+                <button id="deleteAllBtn" class="btn deleteAllBtn pointer">Delete All</button>
             </div>
         </div>
 
@@ -61,13 +61,13 @@
                         <th class="">ID</th>
                         <th class="">name</th>
                         <th class="">hobby</th>
-                        <th class="">about</th>
+                        <th class="">self Describe</th>
                         <th class="">Actions</th>
                     </tr>
                 </thead>
 
-                <tbody class="">
-                    <tr>
+                <tbody id="tableBody" class="">
+                    <!-- <tr>
                         <td>1</td>
                         <td>Geremsa</td>
                         <td>Games</td>
@@ -86,7 +86,7 @@
                             <img class="edit pointer" src="./src/shared/edit-icon.png" alt="edit">
                             <img class="delete pointer" src="./src/shared/delete-icon.png" alt="delete">
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>

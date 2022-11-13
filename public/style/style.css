@@ -22,7 +22,7 @@ body {
 }
 /* input container */
 .input-container {
-    width: 577px;
+    width: 530px;
     height: 637px;
     left: 12px;
     top: 21px;
@@ -32,9 +32,9 @@ body {
 }
 /* Display details */
 .display-details {
-    width: 790px;
+    width: 837px;
     height: 637px;
-    left: 600px;
+    left: 553px;
     top: 21px;
 
     background: #FFFFFF;
@@ -90,7 +90,7 @@ input {
 input:focus {
     border: 2px solid #13139c;
 }
-#ID {
+#userId {
     background-color: rgba(215, 210, 210, 0.921);
 }
 
@@ -130,11 +130,11 @@ input:focus {
 }
 
 /* Edit and delete button design */
-.edit {
+.editBtn {
     width: 27px;
     margin-inline: 6px;
 }
-.delete{
+.deleteBtn {
     width: 30px;
     margin-inline: 6px;
 }

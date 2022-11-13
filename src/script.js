@@ -1,15 +1,19 @@
 // import the indexedDB api
-import userDb, {bulkCreate} from "./module.js";
-// import {massCreate} from "./module.js";
+import userDb, {
+    bulkCreate,
+    getData,
+    createElements
+} from "./module.js";
 
 // input tags
+const userId = document.getElementById('userId')
 const Name = document.getElementById('name');
 const Hobby = document.getElementById('hobby');
 const About = document.getElementById('about');
 
 // Buttons
 const createBtn = document.getElementById('createBtn');
-const resetBtn = document.getElementById('resetBtn');
+const readBtn = document.getElementById('readBtn');
 const updateBtn = document.getElementById('updateBtn');
 const deleteBtn = document.getElementById('deleteBtn');
 
@@ -18,19 +22,56 @@ let db = userDb("Userdb",{
     users:`++id, name, hobby, about`
 });
 
-// const container = document.getElementById('store'); // a container to store the details inputed
-
-// // function to submit the details entered by the user to the container "store"
+// Create and insert the data to the database on click
 createBtn.addEventListener('click', (e) => {
     let flag = bulkCreate(db.users, {
         name: Name.value,
         hobby: Hobby.value,
         about: About.value
     })
-    console.log(flag);
+    // inserting the value given by user
+    Name.value = Hobby.value = About.value = "";
+
+    // Calling the function to get the data from the database
+    getData(db.users, (data) => {
+        userId.value = data.id + 1 || 1;
+        // console.log(data);
+    });
 });
 
-// // the function the add the items to the display-details container
-// function addItems() {
+// Read event on click
+readBtn.addEventListener('click', createTable);
 
-// }
+function createTable() {
+    const tbody = document.getElementById('tableBody');
+
+    while (tbody.hasChildNodes()) {
+        tbody.removeChild(tbody.firstChild);
+    }
+
+    // get the data from the database to read the data
+    getData(db.users, (data) => {
+        // console.log(data);
+        if(data) {
+            createElements("tr" ,tbody, tr => {
+                // console.log(tr)
+                for (const value in data) {
+                    createElements("td", tr, td => {
+                        td.textContent = data[value];
+                    })
+                }
+            createElements("td",tr,td => {
+                createElements("img", td, img => {
+                    img.className += "editBtn pointer";
+                    img.src += "./src/shared/edit-icon.png";
+                });
+                createElements("img", td, img => {
+                    img.className += "deleteBtn pointer";
+                    img.src += "./src/shared/delete-icon.png";
+                });
+            });
+            });
+        }
+    })
+
+}
