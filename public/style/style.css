@@ -171,12 +171,12 @@ input:focus {
 /* Media Queries */
 @media (max-width: 425px) {
     .main_body {
-        width: 390px;
-        height: 705px;
+        width: 380px;
+        height: 700px;
     }
     .input-container {
-        width: 372px;
-        height: 276px;
+        width: 362px;
+        height: 270px;
         left: 9px;
         top: 9px;
     }
@@ -204,8 +204,8 @@ input:focus {
         padding: 8px 12px;
     }
     .display-details {
-        width: 372px;
-        height: 406px;
+        width: 362px;
+        height: 400px;
         left: 9px;
         top: 292px;
     }
