@@ -1,9 +1,3 @@
-body {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right bottom, #183259, #005375, #007378, #278f63, #89a44c);
-}
 /* main containee */
 .main_body {
     left: 0;
