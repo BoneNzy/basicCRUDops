@@ -1,9 +1,9 @@
 body {
     box-sizing: border-box;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background: linear-gradient(to right bottom, #183259, #005375, #007378, #278f63, #89a44c);
-    scroll-behavior: smooth;
 }
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
