@@ -149,3 +149,19 @@ input:focus {
     right: 0;
     margin-inline: auto;
 }
+/* When no data is found */
+.notFound {
+    position: absolute;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    background-color: rgb(233, 145, 113);
+    text-align: center;
+    width: 70%;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+
+    border-radius: 1.8rem;
+}

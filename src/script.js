@@ -18,7 +18,8 @@ const readBtn = document.getElementById('readBtn');
 const updateBtn = document.getElementById('updateBtn');
 const deleteAllBtn = document.getElementById('deleteAllBtn');
 
-// get the Table body
+// get required elements from html
+const notFound = document.getElementById('notFound');
 const tbody = document.getElementById('tableBody');
 
 // create database
@@ -58,6 +59,7 @@ function createTable() {
     getData(db.users, (data) => {
         // console.log(data);
         if(data) {
+            // console.log(typeof data);
             createElements("tr" ,tbody, tr => {
                 // console.log(tr)
                 for (const value in data) {
@@ -80,8 +82,12 @@ function createTable() {
                 });
             });
             });
+            notFound.remove.classList = ""
         }
-
+        else {
+            notFound.className = "notFound";
+            notFound.textContent = "No Data Found...!";
+        }
     })
 }
 
@@ -142,3 +148,11 @@ deleteAllBtn.addEventListener('click', () => {
 
     userId.value = 1;
 })
+
+/* ===============window onload event=============== */
+// Window onload event
+window.onload = () => {
+    getData(db.users, (data) => {
+        userId.value = data.id +1 || 1;
+    })
+}
