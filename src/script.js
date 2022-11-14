@@ -11,6 +11,7 @@ const Name = document.getElementById('name');
 const Hobby = document.getElementById('hobby');
 const About = document.getElementById('about');
 
+/* ===================Buttons=================== */
 // Buttons
 const createBtn = document.getElementById('createBtn');
 const readBtn = document.getElementById('readBtn');
@@ -25,7 +26,7 @@ let db = userDb("Userdb",{
     users:`++id, name, hobby, about`
 });
 
-/* ================Create Button================= */
+/* =================Create Button Event================= */
 // Create and insert the data to the database on click
 createBtn.addEventListener('click', (e) => {
     let flag = bulkCreate(db.users, {
@@ -43,7 +44,7 @@ createBtn.addEventListener('click', (e) => {
     });
 });
 
-/* ================Read Button================= */
+/* ================Read Button Event================= */
 // Read event on click
 readBtn.addEventListener('click', createTable);
 
@@ -84,13 +85,13 @@ function createTable() {
     })
 }
 
-/* ================Edit/Update Button================= */
+/* ===================Edit/Delete Button Event=================== */
 
 // updating the data from the stored in the index database
 document.addEventListener('click', (e) => {
+    let getId = parseInt(e.target.dataset.id);
 
     if (e.target.classList.contains("editBtn")) {
-        let getId = parseInt(e.target.dataset.id);
 
         db.users.get(getId, data => {
             userId.value = data.id || 0;
@@ -99,7 +100,14 @@ document.addEventListener('click', (e) => {
             About.value = data.about || "";
         });
     }
+
+    if (e.target.classList.contains("deleteBtn")) {
+        db.users.delete(getId);
+        createTable();
+    }
 })
+
+/* ================Update/DeleteAll Button Event================= */
 
 // Funtionality of the update button
 updateBtn.addEventListener('click', () => {
@@ -118,4 +126,19 @@ updateBtn.addEventListener('click', () => {
         // clearing the input area to be able to use again next time without reloading
         userId.value = Name.value = Hobby.value = About.value = "";
     }
+})
+
+// Delete All the data from the database
+deleteAllBtn.addEventListener('click', () => {
+    db.delete();
+
+    db = userDb("Userdb",{
+        users:`++id, name, hobby, about`
+    });
+
+    while (tbody.hasChildNodes()) {
+        tbody.removeChild(tbody.firstChild);
+    }
+
+    userId.value = 1;
 })
