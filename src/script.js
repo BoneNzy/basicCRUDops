@@ -15,13 +15,17 @@ const About = document.getElementById('about');
 const createBtn = document.getElementById('createBtn');
 const readBtn = document.getElementById('readBtn');
 const updateBtn = document.getElementById('updateBtn');
-const deleteBtn = document.getElementById('deleteBtn');
+const deleteAllBtn = document.getElementById('deleteAllBtn');
+
+// get the Table body
+const tbody = document.getElementById('tableBody');
 
 // create database
 let db = userDb("Userdb",{
     users:`++id, name, hobby, about`
 });
 
+/* ================Create Button================= */
 // Create and insert the data to the database on click
 createBtn.addEventListener('click', (e) => {
     let flag = bulkCreate(db.users, {
@@ -39,11 +43,11 @@ createBtn.addEventListener('click', (e) => {
     });
 });
 
+/* ================Read Button================= */
 // Read event on click
 readBtn.addEventListener('click', createTable);
 
 function createTable() {
-    const tbody = document.getElementById('tableBody');
 
     while (tbody.hasChildNodes()) {
         tbody.removeChild(tbody.firstChild);
@@ -62,16 +66,39 @@ function createTable() {
                 }
             createElements("td",tr,td => {
                 createElements("img", td, img => {
+                    img.id += "editBtn";
                     img.className += "editBtn pointer";
+                    img.setAttribute(`data-id`, data.id);
                     img.src += "./src/shared/edit-icon.png";
                 });
                 createElements("img", td, img => {
+                    img.id += "deleteBtn";
                     img.className += "deleteBtn pointer";
+                    img.setAttribute(`data-id`, data.id);
                     img.src += "./src/shared/delete-icon.png";
                 });
             });
             });
         }
-    })
 
+    })
 }
+
+/* ================Update Button================= */
+
+// updating the data from the stored in the index database
+document.addEventListener('click', (e) => {
+
+    if (e.target.classList.contains("editBtn")) {
+        let getId = parseInt(e.target.dataset.id);
+        console.log(getId);
+        db.users.get(getId, data => {
+            console.log(data);
+            userId.value = data.id;
+            Name.value = data.name;
+            Hobby.value = data.hobby;
+            About.value = data.about;
+        });
+    }
+})
+

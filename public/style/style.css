@@ -134,7 +134,13 @@ input:focus {
     width: 27px;
     margin-inline: 6px;
 }
+.editBtn:active {
+    transform: translateY(1px);
+}
 .deleteBtn {
     width: 30px;
     margin-inline: 6px;
+}
+.deleteBtn:active {
+    transform: translateY(1px);
 }

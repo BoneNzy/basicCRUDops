@@ -1,3 +1,5 @@
+/* ////////////////////////////////////// */
+// Creating the Database table in indexDB
 const userDb = (Dbname, table) => {
     // Create Datatbase
     const db = new Dexie(Dbname);
@@ -63,7 +65,7 @@ const sortData = (sortedObj) => {
     return obj;
 }
 /* ------------------------------- */
-// Creating the elements dynamically
+// Creating/appending the elements dynamically
 const createElements = (tagname, appendto, fn) => {
     const element = document.createElement(tagname);
     // append the element to table body
@@ -75,6 +77,8 @@ const createElements = (tagname, appendto, fn) => {
         // console.log(element);
     }
 }
+/* -------------------------------- */
+// Updating the data
 
 
 /* ****************===============================**************** */
