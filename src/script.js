@@ -82,7 +82,6 @@ function createTable() {
                 });
             });
             });
-            notFound.classList.remove("notFound");
         }else {
             notFound.className = "notFound";
             notFound.textContent = "No Data Found...!";
@@ -94,6 +93,8 @@ function createTable() {
 
 // updating the data from the stored in the index database
 document.addEventListener('click', (e) => {
+    notFound.classList.remove("notFound");
+
     let getId = parseInt(e.target.dataset.id);
 
     if (e.target.classList.contains("editBtn")) {
@@ -109,6 +110,9 @@ document.addEventListener('click', (e) => {
     if (e.target.classList.contains("deleteBtn")) {
         db.users.delete(getId);
         createTable();
+
+        // clearing the input area to be able to use again next time without reloading
+        userId.value = Name.value = Hobby.value = About.value = "";
     }
 })
 
