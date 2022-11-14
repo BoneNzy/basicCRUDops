@@ -132,6 +132,8 @@ updateBtn.addEventListener('click', () => {
             console.log(displaySuccess);
         });
 
+        createTable();
+
         // clearing the input area to be able to use again next time without reloading
         userId.value = Name.value = Hobby.value = About.value = "";
     }
