@@ -17,6 +17,8 @@ body {
 
     background: linear-gradient(to top left, #ffa1d6, #f0a7e5, #dfaef0, #ccb4f7, #b9bafb, #a8c3ff, #99ccff, #8fd3ff, #87dfff, #85ebff, #8af5fe, #96fff8);
     border-radius: 20px;
+
+    overflow: hidden;
 }
 /* input container */
 .input-container {
@@ -40,6 +42,11 @@ body {
 
     overflow: hidden;
 }
+/* styling input area */
+.input-area {
+    width: 92.7%;
+    padding: .6rem;
+}
 /* input name details */
 .input-details {
     margin: 2rem;
@@ -58,7 +65,6 @@ body {
     background: #5E5DF0;
     border-radius: 999px;
     box-shadow: #5E5DF0 0 10px 20px -10px;
-    box-sizing: border-box;
     color: #FFFFFF;
     font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
     font-size: 16px;
@@ -67,9 +73,6 @@ body {
     opacity: 1;
     outline: 0 solid transparent;
     padding: 8px 18px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
     width: fit-content;
     word-break: break-word;
     border: 0;
@@ -95,7 +98,6 @@ input:focus {
 /* *****************display designs****************** */
 .content-table {
     border-collapse: collapse;
-    margin: 10px 0;
     font-size: 0.9em;
     width: 95%;
     left: 0;
@@ -156,12 +158,80 @@ input:focus {
     font-size: large;
     background-color: rgb(233, 145, 113);
     text-align: center;
-    width: 70%;
-    padding: 1rem;
+    width: 75%;
+    padding: .6rem;
     top: 0;
     left: 0;
     right: 0;
     margin-inline: auto;
 
-    border-radius: 1.8rem;
+    border-radius: 1.5rem;
+}
+
+/* Media Queries */
+@media (max-width: 425px) {
+    .main_body {
+        width: 390px;
+        height: 705px;
+    }
+    .input-container {
+        width: 372px;
+        height: 276px;
+        left: 9px;
+        top: 9px;
+    }
+    /* styling input area */
+    .input-area {
+        width: 50%;
+    }
+    /* input name details */
+    .input-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 8px;
+    }
+    .input-details>* {
+        margin: 2px;
+    }
+    /* Button container */
+    .btn-container {
+        margin-top: 1rem;
+    }
+    .btn {
+        font-weight: 500;
+        line-height: 16px;
+        padding: 8px 12px;
+    }
+    .display-details {
+        width: 372px;
+        height: 406px;
+        left: 9px;
+        top: 292px;
+    }
+    /* *****************display designs****************** */
+    .content-table {
+        font-size: 0.7em;
+        width: 95%;
+        margin: 10px auto;
+    }
+    /* table head */
+    .content-table thead tr {
+        letter-spacing: .5px;
+
+        margin-bottom: 1rem;
+    }
+    .content-table thead th {
+        padding: 6px;
+    }
+    /* table body */
+    .content-table tbody td {
+        padding: 4px;
+    }
+    .editBtn {
+        margin: 0;
+    }
+    .deleteBtn {
+        margin: 0;
+    }
 }

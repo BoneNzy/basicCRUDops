@@ -82,9 +82,8 @@ function createTable() {
                 });
             });
             });
-            notFound.remove.classList = ""
-        }
-        else {
+            notFound.classList.remove("notFound");
+        }else {
             notFound.className = "notFound";
             notFound.textContent = "No Data Found...!";
         }

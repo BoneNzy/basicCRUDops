@@ -36,11 +36,6 @@ h1, h2, h3, h4, h5, h6 {
 .relative {
     position: relative;
 }
-/* styling input area */
-.input-area {
-    width: 92.7%;
-    padding: .6rem;
-}
 /* cursor pointer */
 .pointer {
     cursor: pointer;
