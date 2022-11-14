@@ -142,3 +142,10 @@ input:focus {
 .deleteBtn:active {
     transform: translateY(1px);
 }
+.footer {
+    width: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+}
