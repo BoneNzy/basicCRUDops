@@ -9,7 +9,7 @@ const userDb = (Dbname, table) => {
 
     return db;
 }
-/* =========================== */
+/* =============Creating============== */
 // insert the values to the datatbase
 const bulkCreate = (dbtable, data) => {
     let flag = empty(data);
@@ -34,7 +34,7 @@ const empty = object => {
     }
     return flag;
 }
-/* ============================ */
+/* ==============Getting the data from the database=============== */
 // function to get the data from the database
 const getData = (dbtable, fn) => {
     let index = {};
@@ -81,7 +81,7 @@ const createElements = (tagname, appendto, fn) => {
 // Updating the data
 
 
-/* ****************===============================**************** */
+/* ****************================Exports================**************** */
 // export
 export default userDb;
 export {

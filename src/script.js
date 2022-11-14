@@ -33,7 +33,7 @@ createBtn.addEventListener('click', (e) => {
         hobby: Hobby.value,
         about: About.value
     })
-    // inserting the value given by user
+    // clearing the input area to be able to use again next time without reloading
     Name.value = Hobby.value = About.value = "";
 
     // Calling the function to get the data from the database
@@ -84,21 +84,38 @@ function createTable() {
     })
 }
 
-/* ================Update Button================= */
+/* ================Edit/Update Button================= */
 
 // updating the data from the stored in the index database
 document.addEventListener('click', (e) => {
 
     if (e.target.classList.contains("editBtn")) {
         let getId = parseInt(e.target.dataset.id);
-        console.log(getId);
+
         db.users.get(getId, data => {
-            console.log(data);
-            userId.value = data.id;
-            Name.value = data.name;
-            Hobby.value = data.hobby;
-            About.value = data.about;
+            userId.value = data.id || 0;
+            Name.value = data.name || "";
+            Hobby.value = data.hobby || "";
+            About.value = data.about || "";
         });
     }
 })
 
+// Funtionality of the update button
+updateBtn.addEventListener('click', () => {
+    let updateId = parseInt(userId.value || 0);
+
+    if (updateId) {
+        db.users.update(updateId, {
+            name:Name.value,
+            hobby:Hobby.value,
+            about:About.value
+        }).then(updated => {
+            let displaySuccess = updated ? ('updated successfully') : ('updation was not possible');
+            console.log(displaySuccess);
+        });
+
+        // clearing the input area to be able to use again next time without reloading
+        userId.value = Name.value = Hobby.value = About.value = "";
+    }
+})
